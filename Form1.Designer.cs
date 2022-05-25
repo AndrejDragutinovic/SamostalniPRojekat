@@ -34,13 +34,15 @@ namespace SamostalniPRojekat
             this.zaposleniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proizvodiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kupciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toBeComToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sirarnikToolStripMenuItem});
+            this.sirarnikToolStripMenuItem,
+            this.toBeComToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -78,6 +80,13 @@ namespace SamostalniPRojekat
             this.kupciToolStripMenuItem.Text = "Kupci";
             this.kupciToolStripMenuItem.Click += new System.EventHandler(this.kupciToolStripMenuItem_Click);
             // 
+            // toBeComToolStripMenuItem
+            // 
+            this.toBeComToolStripMenuItem.Name = "toBeComToolStripMenuItem";
+            this.toBeComToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.toBeComToolStripMenuItem.Text = "ToBeContinued";
+            this.toBeComToolStripMenuItem.Click += new System.EventHandler(this.toBeComToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,6 +96,7 @@ namespace SamostalniPRojekat
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -101,6 +111,7 @@ namespace SamostalniPRojekat
         private System.Windows.Forms.ToolStripMenuItem zaposleniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proizvodiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kupciToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toBeComToolStripMenuItem;
     }
 }
 

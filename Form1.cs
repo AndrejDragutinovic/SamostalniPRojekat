@@ -34,5 +34,15 @@ namespace SamostalniPRojekat
             Proizvod staGod = new Proizvod("Kupac");
             staGod.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toBeComToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

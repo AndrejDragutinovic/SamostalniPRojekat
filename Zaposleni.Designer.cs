@@ -197,8 +197,9 @@ namespace SamostalniPRojekat
             this.btn_insert.Name = "btn_insert";
             this.btn_insert.Size = new System.Drawing.Size(83, 28);
             this.btn_insert.TabIndex = 16;
-            this.btn_insert.Text = "button3";
+            this.btn_insert.Text = "Insert";
             this.btn_insert.UseVisualStyleBackColor = true;
+            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
             // btn_update
             // 
@@ -206,8 +207,9 @@ namespace SamostalniPRojekat
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(83, 28);
             this.btn_update.TabIndex = 17;
-            this.btn_update.Text = "button4";
+            this.btn_update.Text = "Edit";
             this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_delete
             // 
@@ -215,8 +217,9 @@ namespace SamostalniPRojekat
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(83, 28);
             this.btn_delete.TabIndex = 18;
-            this.btn_delete.Text = "button5";
+            this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_next
             // 

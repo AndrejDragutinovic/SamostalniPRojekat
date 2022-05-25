@@ -108,5 +108,91 @@ namespace SamostalniPRojekat
             broj_sloga = tabela.Rows.Count - 1;
             Txt_Load();
         }
+
+        private void btn_insert_Click(object sender, EventArgs e)
+        {
+            StringBuilder Naredba = new StringBuilder("INSERT INTO Zaposleni (ime, prezime, zaposleni_email, zaposleni_loz, broj_telefona, plata) VALUES ('");
+            Naredba.Append(txt_ime.Text + "', '");
+            Naredba.Append(txt_prezime.Text + "', '");
+            Naredba.Append(txt_email.Text + "', '");
+            Naredba.Append(txt_pass.Text + "', '");
+            Naredba.Append(txt_broj.Text + "', '");
+            Naredba.Append(txt_plata.Text + "')");
+
+            SqlConnection veza = Konekcija.Connect();
+            SqlCommand Komanda = new SqlCommand(Naredba.ToString(), veza);
+
+            try
+            {
+                veza.Open();
+                Komanda.ExecuteNonQuery();
+                veza.Close();
+            }
+            catch (Exception Greska)
+            {
+                MessageBox.Show(Greska.Message);
+            }
+
+            Load_Data();
+            broj_sloga = tabela.Rows.Count - 1;
+            Txt_Load();
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            StringBuilder Naredba = new StringBuilder("UPDATE Zaposleni SET ");
+            Naredba.Append(txt_ime.Text + "', '");
+            Naredba.Append(txt_prezime.Text + "', '");
+            Naredba.Append(txt_email.Text + "', '");
+            Naredba.Append(txt_pass.Text + "', '");
+            Naredba.Append(txt_broj.Text + "', '");
+            Naredba.Append(txt_plata.Text + "')");
+
+            SqlConnection veza = Konekcija.Connect();
+            SqlCommand Komanda = new SqlCommand(Naredba.ToString(), veza);
+
+            try
+            {
+                veza.Open();
+                Komanda.ExecuteNonQuery();
+                veza.Close();
+            }
+            catch (Exception Greska)
+            {
+                MessageBox.Show(Greska.Message);
+            }
+
+            Load_Data();
+            broj_sloga = tabela.Rows.Count - 1;
+            Txt_Load();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            string Naredba = "DELETE FROM Zaposleni WHERE id = " + txt_id.Text;
+
+            SqlConnection veza = Konekcija.Connect();
+            SqlCommand Komanda = new SqlCommand(Naredba, veza);
+            Boolean brisano = false;
+
+            try
+            {
+                veza.Open();
+                Komanda.ExecuteNonQuery();
+                veza.Close();
+                brisano = true;
+            }
+            catch (Exception Greska)
+            {
+                MessageBox.Show(Greska.Message);
+            }
+
+            if (brisano)
+            {
+                Load_Data();
+                if (broj_sloga > 0) broj_sloga--;
+                Txt_Load();
+            }
+        }
     }
 }
